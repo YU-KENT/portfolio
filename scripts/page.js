@@ -1,7 +1,7 @@
 const sectionPresent = document.querySelector(".present")
 const newdivPresent = document.createElement("div")
 const presentHTML = `
-                   <image class="cannard" src="/asserts/bg.jpg"></image>
+                   <image class="cannard" src="./asserts/bg.jpg"></image>
                     <div class="present_p">
                         <h1>Yu Tian Kent</h1>
                         <h2>Développeuse Web / Front-End React</h2>
@@ -22,7 +22,7 @@ const profilHTML= `
         </div>
         <div class="profil">
             <div class="profil_image">
-                <image class="profil_img" src="/asserts/profile.jpg"></image>
+                <image class="profil_img" src="./asserts/profile.jpg"></image>
             </div>
             <div class="profil_content">
                 <h2 class="profil_title"> About Me</h2>
