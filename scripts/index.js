@@ -65,3 +65,4 @@ window.addEventListener('scroll', function() {
     navbarHidden.style.display = 'none';
   }
 });
+
