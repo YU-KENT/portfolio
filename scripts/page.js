@@ -44,6 +44,7 @@ const profilHTML= `
                     claires et en reliant les concepts de
                     manière cohérente.
                 </p>
+                <img class="papillion pa_1"src="asserts/papillion.svg" alt="icons papillion">
             </div>
         </div>
         

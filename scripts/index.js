@@ -66,3 +66,70 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// fenetre
+
+function showPhrase(){
+  const buttons = document.querySelectorAll(".buttons_bar button")
+  buttons.forEach((button)=>{
+    button.addEventListener("mouseover",function(){
+    const btnColor = button.className.split("_")[1];
+    console.log("color",btnColor)
+    const Phrases = document.querySelectorAll(".fenetre_contents p")
+      for( i=0; i< Phrases.length; i++){
+        if(Phrases[i].className == `p_${btnColor}` ){
+          Phrases[i].style.left = '50%'
+        }
+        else {
+          Phrases[i].style.left = '-100%'
+        }
+      }
+
+    })
+
+    
+  })
+}
+showPhrase();
+
+
+// image slide
+const projects = document.querySelectorAll('.slider')
+console.log("rojects.length",projects.length)
+for(let i = 0; i < projects.length; i++ ){
+
+let slideNumber = i + 1
+console.log("slideNumber",slideNumber,i)
+const Number = 'slide'+ slideNumber;
+const slides = document.querySelectorAll(`#${Number} .slide`)
+let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+    }
+
+showSlide(currentSlide);
+const buttonDiv =  document.querySelector(`#${Number} .buttons`)
+console.log("buttonDiv",buttonDiv)
+for( n=0 ; n < slides.length; n++){
+const SlideButton = document.createElement('BUTTON')
+buttonDiv.appendChild(SlideButton)
+
+
+}
+
+}
+
+
+
+
+
+
+function showButtons(){
+
+
+}
