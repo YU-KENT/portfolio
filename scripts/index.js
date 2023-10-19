@@ -70,12 +70,23 @@ window.addEventListener('scroll', function() {
 
 function showPhrase(){
   const buttons = document.querySelectorAll(".buttons_bar button")
+  const content1 = document.querySelector(".fenetre_contents.content_1")
+  const content2 = document.querySelector(".fenetre_contents.content_2")
+  const Phrases = document.querySelectorAll(".fenetre_contents.content_2 p")
   buttons.forEach((button)=>{
     button.addEventListener("mouseover",function(){
+      if(content2.classList.contains("hidden")){
+        console.log("true")
+        content2.classList.remove("hidden")
+        content1.classList.add("hidden")
+      }
+      else{
+        content2.classList.add("hidden")
+      }
+    
     const btnColor = button.className.split("_")[1];
     console.log("color",btnColor)
-    const Phrases = document.querySelectorAll(".fenetre_contents p")
-      for( i=0; i< Phrases.length; i++){
+    for( i=0; i< Phrases.length; i++){
         if(Phrases[i].className == `p_${btnColor}` ){
           Phrases[i].style.left = '50%'
         }
@@ -83,10 +94,14 @@ function showPhrase(){
           Phrases[i].style.left = '-100%'
         }
       }
-
     })
 
-    
+    button.addEventListener("mouseleave",function(){
+      for( i=0; i< Phrases.length; i++){
+        content1.classList.remove("hidden")
+        content2.classList.add("hidden")
+      }
+    })
   })
 }
 showPhrase();
