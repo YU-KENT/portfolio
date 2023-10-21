@@ -107,44 +107,76 @@ function showPhrase(){
 showPhrase();
 
 
-// image slide
-const projects = document.querySelectorAll('.slider')
-console.log("rojects.length",projects.length)
-for(let i = 0; i < projects.length; i++ ){
+//light box button close
+const sliderContainer =  document.querySelector(".slider-container")
+const closeButton =  document.querySelector(".close-button")
 
-let slideNumber = i + 1
-console.log("slideNumber",slideNumber,i)
-const Number = 'slide'+ slideNumber;
-const slides = document.querySelectorAll(`#${Number} .slide`)
-let currentSlide = 0;
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        if (i === index) {
-          slide.style.display = 'block';
-        } else {
-          slide.style.display = 'none';
+closeButton.addEventListener("click",()=>{
+    if(sliderContainer.style.display = "block"){
+      sliderContainer.style.display = "none"
+      
+  }else{
+       sliderContainer.style.display = "block"
+
+  }
+
+   })
+
+//show lightbox
+const boxs = document.querySelectorAll(".box")
+let currentSlider = 0
+boxs.forEach((box)=>{
+    box.addEventListener("click",()=>{
+        const boxNumber = box.id.split("_")[1]
+        const sliders = document.querySelectorAll(".slider")
+        if(sliderContainer.style.display = "none"){
+            sliderContainer.style.display = "block"
+            for(i=0; i<sliders.length; i++){
+              if(i === boxNumber -1){
+                sliders[i].style.display = "flex"
+                currentSlider = i + 1 ;
+                console.log("block", "currentSlider",currentSlider)
+              }else{
+                console.log("none")
+                sliders[i].style.display = "none"}
+            }
+
+        }else{
+          sliderContainer.style.display = "none"
+
         }
-      });
-    }
+        showSlide();
 
-showSlide(currentSlide);
-const buttonDiv =  document.querySelector(`#${Number} .buttons`)
-console.log("buttonDiv",buttonDiv)
-for( n=0 ; n < slides.length; n++){
-const SlideButton = document.createElement('BUTTON')
-buttonDiv.appendChild(SlideButton)
+  })
+})
+// image slide
+function showSlide(){
+const buttons = document.querySelectorAll(`#slider${currentSlider} .slider-button`)
+const slides = document.querySelectorAll(`#slider${currentSlider} .slide`)
+console.log(slides,"currentSlider",currentSlider)
 
+buttons.forEach((button,index)=>{
+      
+      button.addEventListener("mouseover",()=>{
+      for(i = 0; i < buttons.length; i++){
+        if(i == index){
+          buttons[i].classList.add("active")
+          slides[i].classList.add("active")
 
+        }
+        else{
+          buttons[i].classList.remove("active")
+          slides[i].classList.remove("active")
+        }
+      }
+      })
+
+})
 }
+  
 
-}
-
-
-
+  
 
 
 
-function showButtons(){
 
-
-}
