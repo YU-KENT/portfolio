@@ -156,7 +156,6 @@ const slides = document.querySelectorAll(`#slider${currentSlider} .slide`)
 console.log(slides,"currentSlider",currentSlider)
 
 buttons.forEach((button,index)=>{
-      
       button.addEventListener("mouseover",()=>{
       for(i = 0; i < buttons.length; i++){
         if(i == index){
