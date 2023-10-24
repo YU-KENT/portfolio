@@ -38,7 +38,7 @@ const competencesHTML= `
                           <div class="bar">
                             <span>HTML - CSS</span>
                             <div class="data-bar">
-                                <div class="data-value" style="width: 90%;"></div>
+                                <div class="data-value" style="width: 95%;"></div>
                             </div>
                          </div>
                          <div class="bar">

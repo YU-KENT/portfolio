@@ -25,12 +25,12 @@ const portfolioHTML= `
 
                        <div class="box" id="box_3">
                             <img src="asserts/projectRH1.png" alt="projectRH 1mage 1">
-                            <span class="box_bg">SaaS RH <br>Débugger et tester<br>(React / JEST)</span>
+                            <span class="box_bg">SaaS RH <br>Débugger et tester<br>( React / JEST )</span>
                        </div>
 
                        <div class="box" id="box_4">
                         <img src="asserts/logement1.png" alt="projectLogement 1mage 1">
-                        <span class="box_bg">Site des logements <br>( React / React-Router /)</span>
+                        <span class="box_bg">Site des logements <br>( React / React-Router )</span>
                        </div>
 
                         <div class="box" id="box_5">
