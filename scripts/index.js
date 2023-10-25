@@ -85,7 +85,6 @@ function showPhrase(){
       }
     
     const btnColor = button.className.split("_")[1];
-    console.log("color",btnColor)
     for( i=0; i< Phrases.length; i++){
         if(Phrases[i].className == `p_${btnColor}` ){
           Phrases[i].style.left = '50%'
@@ -105,6 +104,30 @@ function showPhrase(){
   })
 }
 showPhrase();
+//sliderBox button
+const sliderBoxButtons =  document.querySelectorAll(".sliderBox-button")
+  sliderBoxButtons.forEach((button,index)=>{
+    button.addEventListener("click",()=>{
+       
+       const sliderBoxs = document.querySelectorAll(".slider-box")
+       console.log("buttonIndex",index)
+
+       for ( i = 0; i < sliderBoxButtons.length; i ++ ){
+         if(i == index){
+          sliderBoxButtons[i].classList.add("active")
+          sliderBoxs[i].classList.add("active")
+         }
+         else{
+          sliderBoxButtons[i].classList.remove("active")
+          sliderBoxs[i].classList.remove("active")
+         }
+
+        }
+
+    })
+    
+
+  })
 
 
 //light box button close
@@ -112,19 +135,28 @@ const sliderContainer =  document.querySelector(".slider-container")
 const closeButton =  document.querySelector(".close-button")
 
 closeButton.addEventListener("click",()=>{
+    console.log("currentSliderId",currentSliderId)
+    const currentSlides = document.querySelectorAll(`#slider${currentSliderId} .slide`)
+    console.log(currentSlides)
     if(sliderContainer.style.display = "block"){
       sliderContainer.style.display = "none"
+      for(i = 0; i < currentSlides.length; i++){
+         if(i == 0){
+          currentSlides[i].classList.add("active")
+         }else{
+          currentSlides[i].classList.remove("active")
+         }
+       }
       
   }else{
        sliderContainer.style.display = "block"
 
   }
-
    })
 
 //show lightbox
 const boxs = document.querySelectorAll(".box")
-let currentSlider = 0
+let currentSliderId = 0
 boxs.forEach((box)=>{
     box.addEventListener("click",()=>{
         const boxNumber = box.id.split("_")[1]
@@ -134,8 +166,8 @@ boxs.forEach((box)=>{
             for(i=0; i<sliders.length; i++){
               if(i === boxNumber -1){
                 sliders[i].style.display = "flex"
-                currentSlider = i + 1 ;
-                console.log("block", "currentSlider",currentSlider)
+                currentSliderId = i + 1 ;
+                console.log("block", "currentSliderId",currentSliderId)
               }else{
                 console.log("none")
                 sliders[i].style.display = "none"}
@@ -151,9 +183,8 @@ boxs.forEach((box)=>{
 })
 // image slide
 function showSlide(){
-const buttons = document.querySelectorAll(`#slider${currentSlider} .slider-button`)
-const slides = document.querySelectorAll(`#slider${currentSlider} .slide`)
-console.log(slides,"currentSlider",currentSlider)
+const buttons = document.querySelectorAll(`#slider${currentSliderId} .slider-button`)
+const slides = document.querySelectorAll(`#slider${currentSliderId} .slide`)
 
 buttons.forEach((button,index)=>{
       button.addEventListener("mouseover",()=>{

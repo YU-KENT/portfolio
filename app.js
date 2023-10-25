@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer'); // Installez le package 'nodemailer' avec npm
 
 const app = express();
-const port = 4000; // Choisissez le port que vous préférez
+const port = 3000; // Choisissez le port que vous préférez
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -12,11 +12,12 @@ app.use(express.static(__dirname)); // Pour servir les fichiers statiques (comme
 // Afficher le formulaire
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
+  console.log("Get")
 });
 
 // Traiter le formulaire de contact
 app.post('/contact', (req, res) => {
-
+ console.log(req,res)
   const { nom, email, message } = req.body;
 
   // Configurer le transporteur SMTP (utilisez vos propres paramètres)

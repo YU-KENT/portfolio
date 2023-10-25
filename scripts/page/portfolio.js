@@ -2,7 +2,7 @@ const sectionPortfolio = document.getElementById('portfolio')
 const newdivPortfolio = document.createElement("div")
 const portfolioHTML= `
 
-<div class="portfolio_title">
+            <div class="portfolio_title">
                 <h2>PORTFOLIO</h2>                
                 <p>Ma formation chez</h3>
                 <p>Des projets realisé pendant mon parcours</p>
@@ -11,8 +11,10 @@ const portfolioHTML= `
                 </a>
             </div>
              <div class= "projets">
-                
-                    <div class="slider-box">
+
+                <div class="KK">
+                    <div class="slider-box active" id="sliderBox_1>
+                    
                         <div class="box" id="box_1">
                             <img src="asserts/argentBank1.png" alt="projectGraphique 1mage 1">
                             <span class="box_bg">Application pour un compte utilisateur bancaire<br>Calls API<br> ( React / Redux / Swagger )</span>
@@ -29,21 +31,29 @@ const portfolioHTML= `
                        </div>
 
                        <div class="box" id="box_4">
-                        <img src="asserts/logement1.png" alt="projectLogement 1mage 1">
-                        <span class="box_bg">Site des logements <br>( React / React-Router )</span>
+                            <img src="asserts/logement1.png" alt="projectLogement 1mage 1">
+                            <span class="box_bg">Site des logements <br>( React / React-Router )</span>
                        </div>
 
                         <div class="box" id="box_5">
-                        <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
-                        <span class="box_bg">Site de Photographer responsive et accesible<br>( HTML / CSS / Java Script )</span>
+                            <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
+                            <span class="box_bg">Site de Photographer responsive et accesible<br>( HTML / CSS / Java Script )</span>
                        </div>
 
                         <div class="box" id="box_6">
-                        <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
-                        <span class="box_bg">Site de cuisine<br>( HTML / CSS / Java Script )<br>Creation de la fonctionnalité de recherche et des filtres
-                        </span>
+                            <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
+                            <span class="box_bg">Site de cuisine<br>( HTML / CSS / Java Script )<br>Creation de la fonctionnalité de recherche et des filtres </span>
+                        </div>
+
                     </div>
+
+                    <div class="slider-box" id="sliderBox_2>  
                     </div>
+                    <div class="sliderBox-button active"></div>
+                    <div class="sliderBox-button"></div> 
+                    
+                </div>
+                   
                     <div class="slider-container">
                          <span class="close-button"></span>
 
@@ -153,7 +163,9 @@ const portfolioHTML= `
                                 <div class="slider-button"></div>
                             </div>
                         </div>                
-                    </div>               
+                    </div>
+                    
+
             </div>
 
 `
