@@ -1,8 +1,7 @@
 const sectionPortfolio = document.getElementById('portfolio')
 const newdivPortfolio = document.createElement("div")
 const portfolioHTML= `
-
-            <div class="portfolio_title">
+           <div class="portfolio_title">
                 <h2>PORTFOLIO</h2>                
                 <p>Ma formation chez</h3>
                 <p>Des projets realisé pendant mon parcours</p>
@@ -10,10 +9,9 @@ const portfolioHTML= `
                     <img src="asserts/openclassroom.jfif" alt="lien openclassroom">
                 </a>
             </div>
-             <div class= "projets">
-
+          <div class= "projets">
                 <div class="KK">
-                    <div class="slider-box active" id="sliderBox_1>
+                    <div class="slider-box active" id="sliderBox_1">
                     
                         <div class="box" id="box_1">
                             <img src="asserts/argentBank1.png" alt="projectGraphique 1mage 1">
@@ -35,26 +33,32 @@ const portfolioHTML= `
                             <span class="box_bg">Site des logements <br>( React / React-Router )</span>
                        </div>
 
-                        <div class="box" id="box_5">
-                            <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
-                            <span class="box_bg">Site de Photographer responsive et accesible<br>( HTML / CSS / Java Script )</span>
-                       </div>
+                  
 
                         <div class="box" id="box_6">
                             <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
                             <span class="box_bg">Site de cuisine<br>( HTML / CSS / Java Script )<br>Creation de la fonctionnalité de recherche et des filtres </span>
                         </div>
 
+                        
+
                     </div>
 
-                    <div class="slider-box" id="sliderBox_2>  
+                    <div class="slider-box" id="sliderBox_2">  
+                        <div class="box" id="box_7">
+                          <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
+                          <span class="box_bg">Site de Photographer responsive et accesible<br>( HTML / CSS / Java Script )</span>
+                        </div>
+
                     </div>
-                    <div class="sliderBox-button active"></div>
-                    <div class="sliderBox-button"></div> 
+                    <div class="sliderBox-navigation">
+                      <div class="sliderBox-button active"></div>
+                      <div class="sliderBox-button"></div> 
+                    </div>
                     
                 </div>
                    
-                    <div class="slider-container">
+                <div class="slider-container">
                          <span class="close-button"></span>
 
                          <div class="slider" id="slider1">
@@ -126,7 +130,7 @@ const portfolioHTML= `
                             </div>
                         </div>
 
-                        <div class="slider" id="slider5">
+                        <div class="slider" id="slider7">
                             <div class="slide active">
                             <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
                             </div>
@@ -145,10 +149,10 @@ const portfolioHTML= `
                         
                         <div class="slider" id="slider6">
                             <div class="slide active">
-                            <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
+                                <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
                             </div>
                             <div class="slide">
-                            <img src="asserts/projectRerchercheRecette2.jpg" alt="projectRerchercheRecette Image 2">
+                                <img src="asserts/projectRerchercheRecette2.jpg" alt="projectRerchercheRecette Image 2">
                             </div>
                             <div class="slide">
                                 <img src="asserts/projectRerchercheRecette3.jpg" alt="projectRerchercheRecette Image 2">
@@ -163,10 +167,9 @@ const portfolioHTML= `
                                 <div class="slider-button"></div>
                             </div>
                         </div>                
-                    </div>
-                    
-
-            </div>
+        </div>
+                   
+        
 
 `
 newdivPortfolio.innerHTML = portfolioHTML ;
