@@ -23,6 +23,7 @@ function adjustAnnimationSize() {
   const elementCloudRight = document.querySelector('.clouds.right')
   const elementCloudLeft = document.querySelector('.clouds.left')
   const elementCloudStyle2 = document.querySelector('.clouds.style2')
+  const elementPapillion = document.querySelector('.papillion.pa_1')
   
   // Adjust the size based on the container width
   const newProportion = containerWidth / 1440; // You can adjust this value as needed
@@ -34,6 +35,7 @@ function adjustAnnimationSize() {
   elementCloudRight.style.width = 80*newProportion + 'px';
   elementCloudLeft.style.width = 65*newProportion + 'px';
   elementCloudStyle2.style.width = 65*newProportion + 'px';
+  elementPapillion.style.width = 80*newProportion + 'px';
 }
 
 // Add an event listener to adjust the size when the window is resized

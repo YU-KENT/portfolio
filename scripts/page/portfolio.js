@@ -39,18 +39,21 @@ const portfolioHTML= `
                             <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
                             <span class="box_bg">Site de cuisine<br>( HTML / CSS / Java Script )<br>Creation de la fonctionnalité de recherche et des filtres </span>
                         </div>
-
-                        
-
                     </div>
 
                     <div class="slider-box" id="sliderBox_2">  
+
                         <div class="box" id="box_7">
                           <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
                           <span class="box_bg">Site de Photographer responsive et accesible<br>( HTML / CSS / Java Script )</span>
                         </div>
+                        
+                        <div class="box" id="box_8">
+                          <img src="asserts/ohmyfood1.png" alt="projectOhmyfood 1mage 1">
+                          <span class="box_bg">Site de restaurant responsive<br> Animation CSS<br>( HTML / CSS / )</span>
+                        </div>
+                  </div>
 
-                    </div>
                     <div class="sliderBox-navigation">
                       <div class="sliderBox-button active"></div>
                       <div class="sliderBox-button"></div> 
@@ -130,23 +133,9 @@ const portfolioHTML= `
                             </div>
                         </div>
 
-                        <div class="slider" id="slider7">
-                            <div class="slide active">
-                            <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
-                            </div>
-                            <div class="slide">
-                            <img src="asserts/projectPhotographer2.jpg" alt="projectPhotographer Image 2">
-                            </div>
-                            <div class="slide">
-                            <img src="asserts/projectPhotographer3.jpg" alt="projectPhotographer Image 2">
-                            </div>
-                            <div class="slider-navigation">
-                                <div class="slider-button active"></div>
-                                <div class="slider-button"></div>
-                                <div class="slider-button"></div>
-                            </div>
+                        <div class="slider" id="slider5">
                         </div>
-                        
+
                         <div class="slider" id="slider6">
                             <div class="slide active">
                                 <img src="asserts/projectRerchercheRecette1.jpg" alt="projectRerchercheRecette 1mage 1">
@@ -166,7 +155,44 @@ const portfolioHTML= `
                                 <div class="slider-button"></div>
                                 <div class="slider-button"></div>
                             </div>
+                        </div>          
+
+                        <div class="slider" id="slider7">
+                            <div class="slide active">
+                            <img src="asserts/projectPhotographer1.jpg" alt="projectPhotographer 1mage 1">
+                            </div>
+                            <div class="slide">
+                            <img src="asserts/projectPhotographer2.jpg" alt="projectPhotographer Image 2">
+                            </div>
+                            <div class="slide">
+                            <img src="asserts/projectPhotographer3.jpg" alt="projectPhotographer Image 2">
+                            </div>
+                            <div class="slider-navigation">
+                                <div class="slider-button active"></div>
+                                <div class="slider-button"></div>
+                                <div class="slider-button"></div>
+                            </div>
+                        </div>
+
+                        <div class="slider" id="slider8">
+                            <div class="slide active">
+                                <img src="asserts/ohmyfood1.png" alt="projectOhmyfood 1mage 1">
+                            </div>
+                            <div class="slide">
+                                <img src="asserts/ohmyfood2.png" alt="projectOhmyfood 1mage 2">
+                            </div>
+                            <div class="slide">
+                                <img src="asserts/ohmyfood3.png" alt="projectOhmyfood 1mage 3">
+                            </div>
+                            
+                            <div class="slider-navigation">
+                                <div class="slider-button active"></div>
+                                <div class="slider-button"></div>
+                                <div class="slider-button"></div>
+                            </div>
                         </div>                
+                        
+                        
         </div>
                    
         

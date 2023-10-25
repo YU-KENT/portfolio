@@ -638,8 +638,8 @@ justify-content: center;
   }
 
 .slide img{
-    width: 100%;
-    object-fit: cover;
+    max-width: 100%; /* Ensure the image doesn't exceed the div's width */
+    height: auto;
 }
 .slide.active{
     animation: Slidefade 0.2s ease-out;
