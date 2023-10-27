@@ -2,7 +2,7 @@ const sectionContact = document.getElementById('contact')
 const newdivContact = document.createElement("div")
 newdivContact.classList.add("contact");
 const contactHTML= `
-
+                <img src="asserts/bg_contact.jpg" class="bg_contact" alt="background photo section ontact">
                 <h2>CONTACTEZ - MOI</h2>
                 <div class="contact-contents">
                     <p class="contact-contents_p">

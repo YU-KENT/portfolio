@@ -1,3 +1,28 @@
+// function for nav-list version mobile
+const menuButton = document.getElementById('menu-button');
+const navlist = document.querySelector(".nav-list")
+menuButton.addEventListener("click",()=>{
+    if (navlist.classList.contains('hidden')) {
+        navlist.classList.remove('hidden');
+    
+    } else {
+        navlist.classList.add('hidden');
+        
+    }
+})
+
+const navCloseButton = document.querySelector(".nav-close-button")
+navCloseButton.addEventListener("click",()=>{
+  if (!navlist.classList.contains('hidden')) {
+      
+      navlist.classList.add('hidden');
+  
+  } else {
+      navlist.classList.remove('hidden');
+      
+  }
+})
+
 // Get all the <li> elements inside the <ul>
 var listItems = document.querySelectorAll("ul li");
 
@@ -44,7 +69,7 @@ window.addEventListener('resize', adjustAnnimationSize);
 // Call the function initially
 adjustAnnimationSize();
 
-const navbarHidden = document.querySelector('.navbar.hidden');
+const navbarHidden = document.querySelector('.navbar.Dhidden');
 let prevScrollPos = window.scrollY;
 
 window.onscroll = function() {
@@ -61,7 +86,8 @@ window.onscroll = function() {
 
 // Display the navbar when scrolling down
 window.addEventListener('scroll', function() {
-  if (window.scrollY > 100) { // Adjust the scroll position at which the navbar appears
+  const screenWidth = window.screen.width;
+  if (window.scrollY > 100 && screenWidth > 768) { // Adjust the scroll position at which the navbar appears
     navbarHidden.style.display = 'flex';
   } else {
     navbarHidden.style.display = 'none';
@@ -106,7 +132,7 @@ function showPhrase(){
   })
 }
 showPhrase();
-//sliderBox button
+/* //sliderBox button
 const sliderBoxButtons =  document.querySelectorAll(".sliderBox-button")
   sliderBoxButtons.forEach((button,index)=>{
     button.addEventListener("click",()=>{
@@ -129,7 +155,7 @@ const sliderBoxButtons =  document.querySelectorAll(".sliderBox-button")
     })
     
 
-  })
+  }) */
 
 
 //light box button close
