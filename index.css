@@ -1133,6 +1133,19 @@ form > * {
 
 
 @media (max-width: 480px) {
+    .navbar{
+        height:80px;
+    }
+    .logo_circle{
+        margin: 10px;
+        width: 70px;
+        height: 70px;
+      
+    }
+    .logo_prenom{
+        top: 25%;
+        font-size: 20px;
+    }
     .slide{
         width:85%;
     }
