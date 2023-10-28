@@ -26,14 +26,17 @@ const contactHTML= `
                         </div>
                         <div class="info">
                           <img src="asserts/phone.svg" alt="icon telephone">
-                          <span> + 7 67 52 70 27</span>
+                          <span> + 33 7 67 52 70 27</span>
                         </div>
                         <div class="info">
                           <img src="asserts/whitehouse.svg" alt="icon telephone">
                           <span> 95800 Cergy</span>
                         </div>
                     </div>
-               </div>
+                    <a href="https://www.linkedin.com/in/yu-tian-kent-22aa43254/">
+                       <img src="asserts/linkedin.svg" class="icon-linkedin"alt="icon linkedin">
+                    </a>
+                    </div>
 
 `
 newdivContact.innerHTML = contactHTML ;

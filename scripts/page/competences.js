@@ -4,6 +4,9 @@ const competencesHTML= `
                     <div class="competences_title">
                         <h2>MES COMPÉTENCES</h2>
                         <h3>Des compétences à votre service</h3>
+                        <a href="asserts/CV YU-KENT.FE.pdf" class="cv" download>
+                        <i class="fa-solid fa-file-arrow-down fa-xl download-icon"></i> Mon CV
+                        </a>
                     </div>
                     <div class="competences_contents">
                        <div class="contents_left">
