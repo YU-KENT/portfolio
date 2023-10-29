@@ -2,9 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer'); // Installez le package 'nodemailer' avec npm
 
+
 const app = express();
 const port = 3000; // Choisissez le port que vous préférez
 
+app.listen(port, () => {
+  console.log(`Le serveur est en cours d'exécution sur http://localhost:${port}`);
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname)); // Pour servir les fichiers statiques (comme le HTML)
@@ -48,6 +52,4 @@ app.post('/contact', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Le serveur est en cours d'exécution sur http://localhost:${port}`);
-});
+

@@ -1305,6 +1305,10 @@ form > * {
     }
     .competences_title h3{
         font-size: 18px;
+        margin-top: 0px;
+    }
+    .competences_title{
+        margin-top: 30px;
     }
 }
 
