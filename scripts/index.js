@@ -23,7 +23,20 @@ navCloseButton.addEventListener("click",()=>{
   }
 })
 
-// Get all the <li> elements inside the <ul>
+const navlistLi = document.querySelectorAll(".nav-list li")
+navlistLi.forEach((li)=>{
+   li.addEventListener("click",()=>{
+    if (!navlist.classList.contains('hidden')) {
+        navlist.classList.add('hidden');
+  } else {
+      navlist.classList.remove('hidden');
+  }
+       
+   })
+
+})
+
+/* // Get all the <li> elements inside the <ul>
 var listItems = document.querySelectorAll("ul li");
 
 // Loop through the list items and add a click event listener
@@ -37,7 +50,7 @@ listItems.forEach(function (li) {
       window.location.href = link.getAttribute("href");
     }
   });
-});
+}); */
 
 
 function adjustAnnimationSize() {
@@ -132,30 +145,6 @@ function showPhrase(){
   })
 }
 showPhrase();
-/* //sliderBox button
-const sliderBoxButtons =  document.querySelectorAll(".sliderBox-button")
-  sliderBoxButtons.forEach((button,index)=>{
-    button.addEventListener("click",()=>{
-       
-       const sliderBoxs = document.querySelectorAll(".slider-box")
-       console.log("buttonIndex",index)
-
-       for ( i = 0; i < sliderBoxButtons.length; i ++ ){
-         if(i == index){
-          sliderBoxButtons[i].classList.add("active")
-          sliderBoxs[i].classList.add("active")
-         }
-         else{
-          sliderBoxButtons[i].classList.remove("active")
-          sliderBoxs[i].classList.remove("active")
-         }
-
-        }
-
-    })
-    
-
-  }) */
 
 
 //light box button close
