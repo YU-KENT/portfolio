@@ -6,7 +6,7 @@ const presentHTML = `
                         <h1>Yu Tian Kent</h1>
                         <h2>Développeuse Web / Front-End React</h2>
                    </div>
-                   <a href="#profil" class="present_button">QUI-SUIS JE ?</a>
+                   <a href="#profil" class="present_button">CONTACTEZ MOI</a>
 
 `
 newdivPresent.innerHTML = presentHTML;
@@ -28,21 +28,22 @@ const profilHTML= `
                 <image class="profil_img" src="asserts/profile.jpg"></image>
             </div>
             <div class="profil_content">
-                <h2 class="profil_title"> About Me</h2>
+                <h2 class="profil_title"> Qui Suis-je ?</h2>
                 <p class="profil_p">
-                    Après 9 années d'expérience dans le
-                    commerce.<br>j'ai entrepris une transition
-                    pour devenir développeuse front-end.<br>je
-                    souhaite apporter mes compétences à
-                    votre entreprise tout en poursuivant ma
-                    formation.<br>Grâce à mes études en
-                    mathématiques et à mes expériences
-                    professionnelles, Je suis devenu
-                    quelqu'un d'organisée, creative,
-                    rigoureuse et j'ai la pensée logique
-                    décomposant les problèmes en étapes
-                    claires et en reliant les concepts de
-                    manière cohérente.
+                Après 9 années d'expérience dans le
+                commerce en France et à l'international, 
+                j'ai entrepris une reconversion afin de devenir 
+                developpeur front-end.<br>
+                Je souhaite apporter mes compétences à
+                votre entreprise dans un domaine qui me passionne.
+                <br>Grâce à mes études en
+                mathématiques et à mes expériences
+                professionnelles, je suis devenue
+                quelqu'un d'organisée, creative,
+                rigoureuse et j'ai la pensée logique
+                décomposant les problèmes en étapes
+                claires et en reliant les concepts de
+                manière cohérente.
                 </p>
                 <img class="papillion pa_1"src="asserts/papillion.svg" alt="icons papillion">
             </div>

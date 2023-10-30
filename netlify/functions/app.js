@@ -23,21 +23,21 @@ app.get('/', (req, res) => {
 app.post('/contact', (req, res) => {
  console.log(req,res)
   const { nom, email, message } = req.body;
-  console.log(nom, email, message )
+
   // Configurer le transporteur SMTP (utilisez vos propres paramètres)
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'tianyu.tina@gmail.com',
-      pass: 'dqgh yzpz flty goyz',
+      user: 'yukent848@gmail.com',
+      pass: 'qsxw srir soum deez',
     },
   });
 
   const mailOptions = {
     from: email,
-    to: 'tianyu.tina@gmail.com',
+    to: 'yukent848@gmail.com',
     subject: `Nouveau message de ${nom}`,
-    text: message,
+    text: `${message}\n\nfrom ${email}`,
   };
 
   // Envoyer l'e-mail

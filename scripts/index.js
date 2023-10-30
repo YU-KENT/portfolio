@@ -67,7 +67,7 @@ function adjustAnnimationSize() {
   const newProportion = containerWidth / 1440; // You can adjust this value as needed
   const regProportion = 300/1440;
   container.style.height = regProportion*containerWidth + 'px';
-  console.log(container,"gg",containerWidth,)
+  
   elementBird.style.width = 100*newProportion + 'px';
   elementMosquito.style.width = 25*newProportion + 'px';
   elementCloudRight.style.width = 80*newProportion + 'px';

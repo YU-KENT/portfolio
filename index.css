@@ -809,7 +809,7 @@ justify-content: center;
  .portfolio_title a{
     position: absolute;
     top:50%;
-    right:30%;
+    right:26%;
     height:44px;
     overflow: hidden;
     transition: transform 0.2s;
