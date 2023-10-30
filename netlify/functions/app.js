@@ -1,30 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer'); // Installez le package 'nodemailer' avec npm
+const nodemailer = require('nodemailer');
 
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: 'Method Not Allowed' }),
+    };
+  }
 
-const app = express();
-const port = 3000; // Choisissez le port que vous préférez
+  const { nom, email, message } = JSON.parse(event.body);
 
-app.listen(port, () => {
-  console.log(`Le serveur est en cours d'exécution sur http://localhost:${port}`);
-});
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname)); // Pour servir les fichiers statiques (comme le HTML)
-
-// Afficher le formulaire
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-  console.log("Get")
-});
-
-// Traiter le formulaire de contact
-app.post('/contact', (req, res) => {
- console.log(req,res)
-  const { nom, email, message } = req.body;
-
-  // Configurer le transporteur SMTP (utilisez vos propres paramètres)
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -40,16 +25,21 @@ app.post('/contact', (req, res) => {
     text: `${message}\n\nfrom ${email}`,
   };
 
-  // Envoyer l'e-mail
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      res.redirect('/erreur.html'); // Page d'erreur
-    } else {
-      console.log('E-mail envoyé : ' + info.response);
-      res.redirect('/confirmation.html'); // Page de confirmation
-    }
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error(error);
+        resolve({
+          statusCode: 500,
+          body: JSON.stringify({ message: 'Internal Server Error' }),
+        });
+      } else {
+        console.log('E-mail sent:', info.response);
+        resolve({
+          statusCode: 200,
+          body: JSON.stringify({ message: 'Email sent successfully' }),
+        });
+      }
+    });
   });
-});
-
-
+};
