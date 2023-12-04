@@ -36,22 +36,6 @@ navlistLi.forEach((li)=>{
 
 })
 
-/* // Get all the <li> elements inside the <ul>
-var listItems = document.querySelectorAll("ul li");
-
-// Loop through the list items and add a click event listener
-listItems.forEach(function (li) {
-  li.addEventListener("click", function () {
-    // Find the <a> element inside the clicked <li>
-    var link = li.querySelector("a");
-
-    if (link) {
-      // Activate the link by navigating to its href
-      window.location.href = link.getAttribute("href");
-    }
-  });
-}); */
-
 
 function adjustAnnimationSize() {
   const containerWidth = document.querySelector('.animation-container').offsetWidth;
@@ -147,32 +131,78 @@ function showPhrase(){
 showPhrase();
 
 
-//light box button close
+
+
+// box slide for projets
+const boxs = document.querySelectorAll(".box")
 const sliderContainer =  document.querySelector(".slider-container")
-const closeButton =  document.querySelector(".close-button")
+const sliderBox = document.querySelector('.slider-box');
+const totalBoxs = boxs.length;
+const dotClass = 'dot';
+let currentBox = 0;
+let numberBoxs;
+let boxWidth;
 
-closeButton.addEventListener("click",()=>{
-    console.log("currentSliderId",currentSliderId)
-    const currentSlides = document.querySelectorAll(`#slider${currentSliderId} .slide`)
-    console.log(currentSlides)
-    if(sliderContainer.style.display = "block"){
-      sliderContainer.style.display = "none"
-      for(i = 0; i < currentSlides.length; i++){
-         if(i == 0){
-          currentSlides[i].classList.add("active")
-         }else{
-          currentSlides[i].classList.remove("active")
-         }
-       }
-      
-  }else{
-       sliderContainer.style.display = "block"
-
+function updateNumberBoxs(){
+  if(window.innerWidth > 1024){
+    numberBoxs = Math.ceil(totalBoxs / 3);
+    boxWidth = 1266
+  }else if (window.innerWidth <= 1024 && window.innerWidth > 768 ) {
+    // Change the number of boxes when the screen width is 1024 pixels or less
+    numberBoxs = Math.ceil(totalBoxs / 2);
+    boxWidth = 1005
+  }else if(window.innerWidth <= 768 && window.innerWidth > 425){ 
+    numberBoxs = Math.ceil(totalBoxs / 1);
+    console.log("here768",numberBoxs)
+    boxWidth = 751
+  }else if(window.innerWidth <= 425 && window.innerWidth >376 ){
+    numberBoxs = Math.ceil(totalBoxs / 1);
+    boxWidth = 408
+  }else if(window.innerWidth <= 376){
+    numberBoxs = Math.ceil(totalBoxs / 1);
+    boxWidth = 357
   }
-   })
+}
+
+updateNumberBoxs();
+
+function updateSlider() {
+  sliderBox.style.transform = `translateX(${-(currentBox * boxWidth) }px)`;
+  console.log("update",boxWidth,numberBoxs)
+  // Update active dot
+  const dots = document.querySelectorAll(`.${dotClass}`);
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentBox);
+  });
+}
+
+// creat dot
+const dotsContainer = document.getElementById('nav-dots');
+function creatDot(){
+  for (let i = 0; i < numberBoxs; i++) {
+    const dot = document.createElement('div');
+    dot.className = dotClass;
+    dot.addEventListener('mouseover', () => {
+      currentBox = i;
+      updateSlider();
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
+creatDot();
+
+window.addEventListener('resize', () => {
+  updateNumberBoxs();
+  // update the dots in the DOM when the window is resized
+  // remove all existing dots and recreate them
+  dotsContainer.innerHTML = '';
+  creatDot();
+  
+});
+// Initialize slider
+updateSlider();
 
 //show lightbox
-const boxs = document.querySelectorAll(".box")
 let currentSliderId = 0
 boxs.forEach((box)=>{
     box.addEventListener("click",()=>{
@@ -184,9 +214,8 @@ boxs.forEach((box)=>{
               if(i === boxNumber -1){
                 sliders[i].style.display = "flex"
                 currentSliderId = i + 1 ;
-                console.log("block", "currentSliderId",currentSliderId)
+
               }else{
-                console.log("none")
                 sliders[i].style.display = "none"}
             }
 
@@ -198,10 +227,11 @@ boxs.forEach((box)=>{
 
   })
 })
-// image slide
+// image slide 
 function showSlide(){
 const buttons = document.querySelectorAll(`#slider${currentSliderId} .slider-button`)
 const slides = document.querySelectorAll(`#slider${currentSliderId} .slide`)
+const closeButton =  document.querySelector(".close-button")
 
 buttons.forEach((button,index)=>{
       button.addEventListener("mouseover",()=>{
@@ -218,11 +248,34 @@ buttons.forEach((button,index)=>{
       }
       })
 })
+// close button function
+closeButton.addEventListener("click",()=>{
+ 
+  if(sliderContainer.style.display = "block"){
+    sliderContainer.style.display = "none"
+    for(i = 0; i < slides.length; i++){
+       if(i == 0){
+        slides[i].classList.add("active")
+        buttons[i].classList.add("active")
+       }else{
+        slides[i].classList.remove("active")
+        buttons[i].classList.remove("active")
+       }
+     }
+    
+}else{
+     sliderContainer.style.display = "block"
 
+}
+ })
 
 
 }
   
+
+
+
+
 
   
 

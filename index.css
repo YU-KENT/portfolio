@@ -673,18 +673,27 @@ justify-content: center;
     width:50%;
 }
 .slide.active{
-    animation: Slidefade 0.2s ease-out;
+    animation: Slidefade 0.15s ease-in-out;
     left:50%;
 
 }
-
+.slider-info{
+    position: absolute;
+    transform: translateX(-50%);
+    left:50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    top: 80%;
+}
+.slider-info a{
+    color:#ffffff;
+    text-decoration: underline;
+}
 .slider-box{
-    overflow: hidden;
-    width:100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 .sliderBox-navigation{
     position: relative;
@@ -696,12 +705,14 @@ justify-content: center;
 
 }
 .slider-navigation {
+    width:80%;
     position: absolute;
     left: 50%;
     top: 76%;
     transform: translate(-50%,-50%);
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 10px;
   }
   
@@ -744,9 +755,10 @@ justify-content: center;
 
 }
 .box{
-    width:380px;
-    height:270px;
     position: relative;
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    margin: 0 22px;
 
 }
 
@@ -762,12 +774,17 @@ justify-content: center;
     left:0;
     top:0;
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transform: scale(1);
     transition: transform 0.4s ease-in-out;
+}
+.box_bg a{
+    color:#ffffff;
+    text-decoration: underline;
 }
 .box_bg:hover{
     cursor:pointer;
@@ -780,8 +797,13 @@ justify-content: center;
 }
 
 .projets{
-    
     margin:30px 80px;
+    height: 312px;
+    position: relative;
+    max-width: 1266px;
+    margin: 0 auto;
+    margin-top: 40px;
+    overflow: hidden;
  }
 #portfolio{
     background-color: #2a29589c;
@@ -986,12 +1008,32 @@ form > * {
     display: none; /* Hide the menu button on desktop */
 }
 
+#nav-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
 
 @media (max-width: 1024px) {
-    .slider-box{
-        grid-template-columns: repeat(2, 1fr);
+    .box{
+        flex: 0 0 38%;
+        margin: 0px 60px;
     }
-    
     .profil_p{
         padding: 0px 40px;
     }
@@ -1128,17 +1170,17 @@ form > * {
     #portfolio{
         padding-bottom: 5px;
     }
-    .slider-box{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap:unset;
-    }
+    
     .box{
-        margin-bottom: 60px;
+        flex: 0 0 51%;
+        margin: 0px 184px;
     }
     .slide{
+     
         width:75%;
+    }
+    .slider-info{
+        font-size: 16px;
     }
     .close-button{
         right:10%;
@@ -1204,14 +1246,19 @@ form > * {
         margin-left: 10px;
         font-size: 18px;
     }
+   
     .slide{
         width:85%;
     }
-    .box_bg,.box{
+    .box_bg{
         width:320px;
         height: 228px;
         font-size: 16px;
         margin-bottom: 30px;
+    }
+    .box{
+        flex: 0 0 78%;
+        margin: 0 45PX;
     }
     h2 {
         font-size: 18px;
@@ -1316,5 +1363,11 @@ form > * {
     .present_p{
         left:15px;
     }
-
+    .box_bg{
+        width:279px;
+        height: 201px;
+    }
+    .box{
+        margin: 0 39pX;
+    }
 }
